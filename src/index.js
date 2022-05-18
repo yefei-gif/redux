@@ -1,15 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import store from './redux/store'
-import App from "./App"
+import { Provider } from 'react-redux'
+import App from './App'
 
-//放在index.js引入store,再通过props传递
+//先下载react-redux
 
 
-console.log(store);
+// console.log(store);
 
-ReactDOM.render(<App store={store} />,document.getElementById("root"))
+ReactDOM.render(
+    <Provider store={store} >
+        <App />
+    </Provider>
+    , document.getElementById("root"))
 
-store.subscribe(()=>{
-    ReactDOM.render(<App store={store} />,document.getElementById("root"))
-}) //，监听redux状态   只要状态更新了，就重新渲染页面，
+//Provider 顶级组件，比app还高，管理所有的组件，
