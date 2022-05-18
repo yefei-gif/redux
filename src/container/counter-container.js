@@ -4,7 +4,7 @@
 import counter from '../components/counter'
 import { connect } from "react-redux"
 
-import { incrementadd, incrementsub } from '../redux/action'
+import { incrementadd, incrementsub, asyncincrement} from '../redux/action'
 
 
 //完整写法
@@ -42,7 +42,8 @@ import { incrementadd, incrementsub } from '../redux/action'
 //简写
 export default connect(state=>({ count :state}),{
     increment:incrementadd,
-    decrement:incrementsub
+    decrement:incrementsub,
+    incrementasync:asyncincrement
 })(counter) 
 
 

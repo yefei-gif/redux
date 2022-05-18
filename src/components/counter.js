@@ -29,7 +29,7 @@ class Counter extends Component {
     incrementasync=()=>{
         let { value} =this.refs.selectNumber
         setTimeout(() => {
-            this.props.increment(value*1)
+            this.props.incrementasync(value*1,1000)
         }, 1000);
        
     }
